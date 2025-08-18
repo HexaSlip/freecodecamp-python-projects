@@ -32,3 +32,17 @@ print("Index of the first character:", index)
 #6. Apply Caesar shift (example for first character only)
 shifted = alphabet[index + shift]
 print("Shifted character:", shifted)
+text = 'Hello World'
+shift = 3
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+encrypted_text = ''
+
+for char in text.lower():
+    if char == ' ':
+      print('space!')
+    else:
+      print('space!')
+    index = alphabet.find(char)
+    new_index = index + shift
+    encrypted_text += alphabet[new_index]
+    print('char:', char, 'encrypted text:', encrypted_text)
