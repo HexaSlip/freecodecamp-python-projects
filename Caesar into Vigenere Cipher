@@ -1,0 +1,43 @@
+### Previous Caesar Cipher Code
+text = 'Hello Zaira'
+shift = 3
+
+def caesar(message, offset):
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    encrypted_text = ''
+
+    for char in message.lower():
+        if char == ' ':
+            encrypted_text += char
+        else:
+            index = alphabet.find(char)
+            new_index = (index + offset) % len(alphabet)
+            encrypted_text += alphabet[new_index]
+    print('plain text:', message)
+    print('encrypted text:', encrypted_text)
+
+caesar(text, shift)
+caesar(text, 13)
+
+### (Developing) Vigenere Cipher (based on previous code)
+text = 'Hello Zaira'
+key = 'lemon'  # TODO: change to any keyword
+
+def vigenere(message, key):
+    key_index = 0
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    encrypted_text = ''
+    # TODO: Replace 'offset' with shift value from key
+
+    for char in message.lower():
+        if char == ' ':
+            encrypted_text += char
+        else:
+            # Placeholder Caesar-like shift, will replace later
+            new_index = (alphabet.find(char) + 3) % len(alphabet)
+            encrypted_text += alphabet[new_index]
+
+    print('plain text:', message)
+    print('encrypted text:', encrypted_text)
+
+vigenere(text, key)
