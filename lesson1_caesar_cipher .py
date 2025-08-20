@@ -37,12 +37,24 @@ shift = 3
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
 encrypted_text = ''
 
-for char in text.lower():
-    if char == ' ':
-      print('space!')
-    else:
-      print('space!')
-    index = alphabet.find(char)
-    new_index = index + shift
-    encrypted_text += alphabet[new_index]
-    print('char:', char, 'encrypted text:', encrypted_text)
+# Caesar Cipher Code 
+text = 'Hello Zaira'
+shift = 3
+
+def caesar(): 
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    encrypted_message = ''
+
+    for char in text.lower():
+        if char == ' ':
+            encrypted_message += char
+        else:
+            index = alphabet.find(char)
+            new_index = (index + offset) % len(alphabet)
+            encrypted_message += alphabet[new_index]
+
+    print('plain message:', message)
+    print('encrypted message:', encrypted_message)
+
+caesar(text, shift)  # Call the function so it runs
+caesar(text, 13) 
