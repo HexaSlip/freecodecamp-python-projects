@@ -20,24 +20,31 @@ caesar(text, shift)
 caesar(text, 13)
 
 ### (Developing) Vigenere Cipher (based on previous code)
-text = 'Hello Zaira'
+text = 'Hello Zaira!'
 key = 'lemon'  # TODO: change to any keyword
 
-def vigenere(message, key):
+def vigenere(message, key, direction = 1):
     key_index = 0
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
-    encrypted_text = ''
-    # TODO: Replace 'offset' with shift value from key
+    final_message = ''
 
+    #Append space to the message
     for char in message.lower():
-        if char == ' ':
-            encrypted_text += char
+        if not char.isalpha():
+            final_message += char
         else:
-            # Placeholder Caesar-like shift, will replace later
-            new_index = (alphabet.find(char) + 3) % len(alphabet)
-            encrypted_text += alphabet[new_index]
+            # Find the right character to encode/decode
+            key_char = key[key_index % len(key)]
+            key_index += 1
+            # Define the offset and the encrypted/decrypted letter
+            offset = alphabet.index(key_char) 
+            index = alphabet.find(char)
+            new_index = (index + offset * direction) % len (alphabet) 
+            final_message += alphabet[new_index]
 
-    print('plain text:', message)
-    print('encrypted text:', encrypted_text)
+return final_message
+encryption = vigenere(text, custom_key) 
+print(encryption) 
+decryption = vigenere(encryption, custom_key) 
 
 vigenere(text, key)
