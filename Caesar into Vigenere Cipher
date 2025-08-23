@@ -21,7 +21,7 @@ caesar(text, 13)
 
 ### Vigenere Cipher (based on previous code)
 text = 'mrttaqrhknsw ih puggrur'
-custom_key = 'python'
+custom_key = 'happycoding'
 
 def vigenere(message, key, direction = 1):
     key_index = 0
